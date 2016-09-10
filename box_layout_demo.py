@@ -8,5 +8,16 @@ class BoxLayoutDemo(App):
         self.root = Builder.load_file('box_layout.kv')
         return self.root
 
+    def handle_clear(self):
+        print("Clear")
+        self.root.ids.output_label.text = "Enter your name"
+        self.root.ids.input_name.text = ""
 
-BoxLayoutDemo().run()
+    def handle_greet(self):
+        print("Greet")
+        self.root.ids.output_label.text = "Hello " + self.root.ids.input_name.text
+
+
+# create and start the App running
+app = BoxLayoutDemo()
+app.run()
